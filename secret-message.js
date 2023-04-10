@@ -82,9 +82,9 @@ function secretText(newArray) {
   return temp.join("");
 }
 
-// let resultat = normalizedText(
-//   "Adding words to a quote - “He [Mr. Jones] was the last person seen at the house,” reported the detective."
-// );
+let resultat = normalizedText(
+  "Adding words to a quote - “He [Mr. Jones] was the last person seen at the house,” reported the detective."
+);
 
 // let resultat = normalizedText("function myFunc(a) {if (a !== undefined) {console.log(a.length);}} var  myVar; myFunc(myVar);")
 let splitText1 = splitText(resultat, 10);
