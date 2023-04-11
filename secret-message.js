@@ -1,8 +1,12 @@
+
+
 //function to normalize a text
 
 const normalizedText = (chaine) => {
   let count = 0;
   let newArray = [];
+
+  // Array for the differents punctuation mark that exist in english both US/UK
   let listOfPunctuationMark = [
     ".",
     "?",
@@ -34,11 +38,11 @@ const normalizedText = (chaine) => {
       newArray.push(elem);
     }
   }
-  // console.log(newArray); console.log();
   return newArray.join("").toLowerCase();
 };
 
 // function to split a normalized text into a array of strings
+
 const splitText = (string, N) => {
   if (string.length > 0) {
     let newArray = [];
@@ -46,23 +50,18 @@ const splitText = (string, N) => {
       let j = i;
       newArray.push(string.slice(j, j + N));
     }
-    /* let N = string.length; //////////t check for the padding: 
-     if the length of the last string in result in less than the 
-    one of the preceding string, add padding with o, at the end */
-    /*if (newArray[N - 1].length < newArray[N - 2].length) {
-      newArray[N - 1].padEnd(newArray[N - 2].length, "0");
-    } */
     return newArray;
   } else return "empty string";
 };
 
-//function to read each characters on the row left to right. takes array
-// of normalized text and the length of the text
+/* function to read each characters on the row left to right. takes array
+of normalized text and the length of the text */
+
 function secretText(newArray) {
   let usedArray = [];
   usedArray = newArray;
   let temp = [];
-  console.log(newArray);
+  // console.log(newArray);
   let i = 0,
     j = 0,
     k = 0;
@@ -78,24 +77,45 @@ function secretText(newArray) {
     // need to restart at the beginning (top line) of the array
     i = 0;
   }
-  console.table(temp);
+  //to show the secret text
+  // console.table(temp);
   return temp.join("");
 }
 
+// a text for the test
 let resultat = normalizedText(
   "Adding words to a quote - “He [Mr. Jones] was the last person seen at the house,” reported the detective."
 );
 
-// let resultat = normalizedText("function myFunc(a) {if (a !== undefined) {console.log(a.length);}} var  myVar; myFunc(myVar);")
-let splitText1 = splitText(resultat, 10);
-let newSecretText = secretText(splitText1);
-let splitText2 = splitText(newSecretText, 8);
+// to show the text typed import 
+console.log("text : ----->");
+console.log();
+console.log(
+  "Adding words to a quote - “He [Mr. Jones] was the last person seen at the house,” reported the detective."
+);
+console.log();
 
-// console.log(res[0][5]);
-// console.log(res[7].length);
-// console.log(resultat.split('', 10));
+//to show the normalize text
+console.log("normalize text : ----->");
 console.log();
-// console.log(res);
+console.log(resultat);
+console.log();
+
+// to show the normalized splitted text into rectangle
+console.log("splitted text into rectangle  : ----->");
+let splitText1 = splitText(resultat, 9);
+console.table(splitText1);
+console.log();
+
+// to show the secret text
+console.log("the secret text : ----->");
+let newSecretText = secretText(splitText1);
+// let splitText2 = splitText(newSecretText, 8);
+console.log();
 console.log(newSecretText);
-console.log();
+
+//to show the splitted secret text
+ console.log();
+console.log("the splitted secret text : ----->");
+let splitText2 = splitText(newSecretText, 8);
 console.table(splitText2);
