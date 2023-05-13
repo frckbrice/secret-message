@@ -42,7 +42,7 @@ function fireFn(event) {
   let newSecretText = secretText(splitText1);
   let newSplitText = splitText(newSecretText, rAndC[0]);
   encodeText.innerHTML = chunkToString(newSplitText);
-console.log("encoded message", encodeText.innerHTML);
+  console.log("encoded message", encodeText.innerHTML);
 
   //* to show the second rectangle from the encoded message
   let splitText2 = splitText(newSecretText, rAndC[0]);
