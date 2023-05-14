@@ -47,7 +47,10 @@ const normalizedText = (chaine) => {
     "^",
   ];
   for (let elem of chaine) {
-    if (listOfPunctuationMark.includes(elem) == 0) {
+    // if (listOfPunctuationMark.includes(elem) == 0) {
+    //   newArray.push(elem);
+    // }
+    if(/\w/.test(elem)){
       newArray.push(elem);
     }
   }
@@ -68,7 +71,7 @@ function columsAndRowLength(chaine) {
    now we take the case where K=1; as 1 is smallest integer after 0; to avoid N=C² and to be close to N as much as possible. The value of K chosen, just help us to get the appropriate value of C that we will use because there are many of them. since C = R + K.*/
   let N = chaine.length;
   let delta = 1 + 4 * N;
-  //we need just the positive r from the two solution of equation r²+kr-N=0.
+  //we need just the rounded positive r from the two solutions of equation r²+kr-N=0.
   let r = Math.round((-1 + Math.sqrt(delta)) / 2);
   let nearMultipleOfr = Math.ceil(N / r) * r;
   let c = nearMultipleOfr / r;
@@ -94,12 +97,13 @@ const splitText = (string, colums) => {
     // try to fill the gap of the last substring in case the rectangle is not perfect
     usedStrings = newArray;
     let long2 = newArray.length;
-    // to get the before last element of newArray
+    // to get the before last element length of newArray
     let L2 = usedStrings[long2 - 2].length;
-    // to get the last element of newArray
+    // to get the last element length of newArray
     let L1 = usedStrings[long2 - 1].length;
-    // check if the last substring is to short.
+    // check if the last substring is shorter than one before.
     if (L2 > L1) {
+      // append '$' character to the last substring
       usedStrings[long2 - 1] = usedStrings[long2 - 1].padEnd(L2, "$");
       return usedStrings;
     }
@@ -109,7 +113,7 @@ const splitText = (string, colums) => {
 
 //* function to convert split text into chunks strings
 function chunkToString(splitText) {
-  return splitText.join("\t");
+  return splitText.join(" ");
 }
 
 //* function to read each characters on the row left to right. takes array of normalized text and the length of the text

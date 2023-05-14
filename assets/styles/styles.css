@@ -28,7 +28,11 @@ header {
 }
 
 h1 {
-  color: aliceblue;
+   background-image: linear-gradient(to right, blueviolet, #f06d06);
+  -webkit-background-clip: text;
+
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
   font-size: 40px;
   text-align: center;
@@ -83,7 +87,7 @@ span {
   color: blueviolet;
     border-radius: 10px;
   font-weight: bold;
-  background-image: linear-gradient(to right, blueviolet, rgb(182, 200, 221));
+  background-image: linear-gradient(to right, blueviolet, #f06d06);
   -webkit-background-clip: text;
 
   background-clip: text;
