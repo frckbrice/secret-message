@@ -21,7 +21,7 @@ function fireFn(event) {
   event.preventDefault();
 
   const inpuTxt = document.querySelector(".input-text").value;
-  console.log(inpuTxt);
+  // if(inpuTxt.length )
   //*to  normalize text
   let normalizeT = normalizedText(inpuTxt);
   console.log("normalize text", normalizeT);

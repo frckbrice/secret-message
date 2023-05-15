@@ -17,35 +17,35 @@ const normalizedText = (chaine) => {
   let newArray = [];
   chaine = chaine.split("");
   // Array for the differents punctuation mark that exist in english both US/UK
-  let listOfPunctuationMark = [
-    ".",
-    "?",
-    "!",
-    "-",
-    ",",
-    "{",
-    "}",
-    "[",
-    "]",
-    "...",
-    "&",
-    "@",
-    "/",
-    "*",
-    "(",
-    ")",
-    ":",
-    ";",
-    '"',
-    "_",
-    " ",
-    "'",
-    "’",
-    "$",
-    "%",
-    "#",
-    "^",
-  ];
+  // let listOfPunctuationMark = [
+  //   ".",
+  //   "?",
+  //   "!",
+  //   "-",
+  //   ",",
+  //   "{",
+  //   "}",
+  //   "[",
+  //   "]",
+  //   "...",
+  //   "&",
+  //   "@",
+  //   "/",
+  //   "*",
+  //   "(",
+  //   ")",
+  //   ":",
+  //   ";",
+  //   '"',
+  //   "_",
+  //   " ",
+  //   "'",
+  //   "’",
+  //   "$",
+  //   "%",
+  //   "#",
+  //   "^",
+  // ];
   for (let elem of chaine) {
     // if (listOfPunctuationMark.includes(elem) == 0) {
     //   newArray.push(elem);
@@ -87,7 +87,7 @@ function columsAndRowLength(chaine) {
  * @returns Array of strings
  */
 const splitText = (string, colums) => {
-  if (string.length > colums) {
+  if (string.length > 50) {
     let newArray = [],
       usedStrings = [];
     // to create new array with chunks
@@ -108,7 +108,7 @@ const splitText = (string, colums) => {
       return usedStrings;
     }
     return newArray;
-  } else return "string to short";
+  } else alert("String to short. Need at least 50 characters");
 };
 
 //* function to convert split text into chunks strings
