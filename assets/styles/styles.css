@@ -28,7 +28,7 @@ header {
 }
 
 h1 {
-   background-image: linear-gradient(to right, blueviolet, #f06d06);
+   background-image: linear-gradient(to right, white, #ffff06);
   -webkit-background-clip: text;
 
   background-clip: text;
@@ -52,7 +52,8 @@ main {
 label {
   color: aliceblue;
   font-style: italic;
-  margin-left: 5px;
+  margin: 0 5px 30px 5px;
+  font-size: 1.25rem;
 }
 
 .input-text {
@@ -66,6 +67,7 @@ label {
 .first-rectangle {
   margin-top: 1rem;
   color: aliceblue;
+  font-size: 1.25rem;
 }
 
 .div-btn-action {
@@ -79,6 +81,7 @@ label {
   width: auto;
   padding: 8px 20px;
   border-radius: 5px;
+  font-size: 1.25rem;
 }
 
 span {
@@ -87,10 +90,8 @@ span {
   color: blueviolet;
     border-radius: 10px;
   font-weight: bold;
-  background-image: linear-gradient(to right, blueviolet, #f06d06);
-  -webkit-background-clip: text;
-
-  background-clip: text;
+  background-image: linear-gradient(to right, white, #ffff06);
+  -webkit-background-clip: text;  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1.25rem;
 }

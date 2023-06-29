@@ -16,40 +16,8 @@ export {
 const normalizedText = (chaine) => {
   let newArray = [];
   chaine = chaine.split("");
-  // Array for the differents punctuation mark that exist in english both US/UK
-  // let listOfPunctuationMark = [
-  //   ".",
-  //   "?",
-  //   "!",
-  //   "-",
-  //   ",",
-  //   "{",
-  //   "}",
-  //   "[",
-  //   "]",
-  //   "...",
-  //   "&",
-  //   "@",
-  //   "/",
-  //   "*",
-  //   "(",
-  //   ")",
-  //   ":",
-  //   ";",
-  //   '"',
-  //   "_",
-  //   " ",
-  //   "'",
-  //   "’",
-  //   "$",
-  //   "%",
-  //   "#",
-  //   "^",
-  // ];
+
   for (let elem of chaine) {
-    // if (listOfPunctuationMark.includes(elem) == 0) {
-    //   newArray.push(elem);
-    // }
     if(/\w/.test(elem)){
       newArray.push(elem);
     }
@@ -113,7 +81,7 @@ const splitText = (string, colums) => {
 
 //* function to convert split text into chunks strings
 function chunkToString(splitText) {
-  return splitText.join(" ");
+  return splitText.join(`&nbsp;&nbsp;`);
 }
 
 //* function to read each characters on the row left to right. takes array of normalized text and the length of the text
@@ -125,14 +93,12 @@ function chunkToString(splitText) {
  */
 
 function secretText(newArray) {
-  let usedArray = [];
-  usedArray = newArray;
   let temp = [];
   let i = 0,
     j = 0;
-  while (j < usedArray[0].length) {
-    while (i < usedArray.length) {
-      temp.push(usedArray[i][j]);
+  while (j < newArray[0].length) {
+    while (i < newArray.length) {
+      temp.push(newArray[i][j]);
       i++;
     }
     // for the sake of termination, we need to go forward (next column) in the array
