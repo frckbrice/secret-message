@@ -72,7 +72,7 @@ const splitText = (string, colums) => {
     // check if the last substring is shorter than one before.
     if (L2 > L1) {
       // append '$' character to the last substring
-      usedStrings[long2 - 1] = `${usedStrings[long2 - 1].padEnd(L2, "$")}`;
+      usedStrings[long2 - 1] = usedStrings[long2 - 1].padEnd(L2, "$");
       return usedStrings;
     }
     return newArray;
@@ -95,8 +95,8 @@ function chunkToString(splitText) {
 function secretText(newArray) {
   let temp = [];
   let i = 0,
-    j = 0;
-  while (j < newArray[0].length) {
+    j = 1;
+  while (j < newArray[0].length-1) {
     while (i < newArray.length) {
       temp.push(newArray[i][j]);
       i++;

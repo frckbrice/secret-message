@@ -15,7 +15,6 @@ body {
   padding: 2rem 3rem;
   margin: 0;
   overflow: scroll;
-  border: 1px solid;
   position: relative;
 }
 
@@ -28,10 +27,11 @@ header {
 }
 
 h1 {
-  background-image: linear-gradient(to right, white, #ffff06);
+  /* background-image: linear-gradient(to right, white, #ffff06);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
+   color: #000;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
   font-size: 40px;
   text-align: center;
