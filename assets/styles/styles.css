@@ -8,7 +8,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  background: linear-gradient(rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url("../images/bgimagfromphotodeposit.jpg");
+  /* background: linear-gradient(rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url("../images/bgimagfromphotodeposit.jpg"); */
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -28,9 +28,8 @@ header {
 }
 
 h1 {
-   background-image: linear-gradient(to right, white, #ffff06);
+  background-image: linear-gradient(to right, white, #ffff06);
   -webkit-background-clip: text;
-
   background-clip: text;
   -webkit-text-fill-color: transparent;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
@@ -60,13 +59,14 @@ label {
   width: 100%;
   height: 40px;
   border-radius: 15px;
+  padding: 0.25rem 1.5rem;
 }
 
 .second-rectangle,
 .first-chunks,
 .first-rectangle {
   margin-top: 1rem;
-  color: aliceblue;
+  color: rgb(6, 6, 6);
   font-size: 1.25rem;
 }
 
@@ -86,13 +86,13 @@ label {
 
 span {
   font-style: italic;
-  font-size: 1rem;
-  color: blueviolet;
+  font-size: 1.5rem;
+  color: rgb(26, 25, 26);
     border-radius: 10px;
   font-weight: bold;
-  background-image: linear-gradient(to right, white, #ffff06);
+  /* background-image: linear-gradient(to right, white, #ffff06);
   -webkit-background-clip: text;  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent; */
   margin-bottom: 1.25rem;
 }
 

@@ -40,11 +40,11 @@ function columsAndRowLength(chaine) {
   let N = chaine.length;
   let delta = 1 + 4 * N;
   //we need just the rounded positive r from the two solutions of equation r²+kr-N=0.
-  let r = Math.round((-1 + Math.sqrt(delta)) / 2);
-  let nearMultipleOfr = Math.ceil(N / r) * r;
-  let c = nearMultipleOfr / r;
+  let row = Math.round((-1 + Math.sqrt(delta)) / 2);
+  let nearMultipleOfr = Math.ceil(N / row) * row;
+  let column = nearMultipleOfr / row;
 
-  return [r, c];
+  return [row, column];
 }
 
 // *function to split a normalized text into a array of strings
@@ -60,7 +60,7 @@ const splitText = (string, colums) => {
       usedStrings = [];
     // to create new array with chunks
     for (let i = 0; i < string.length; i += colums) {
-      newArray.push(string.slice(i, i + colums));
+      newArray.push(`"${string.slice(i, i + colums)}"`);
     }
     // try to fill the gap of the last substring in case the rectangle is not perfect
     usedStrings = newArray;
@@ -72,7 +72,7 @@ const splitText = (string, colums) => {
     // check if the last substring is shorter than one before.
     if (L2 > L1) {
       // append '$' character to the last substring
-      usedStrings[long2 - 1] = usedStrings[long2 - 1].padEnd(L2, "$");
+      usedStrings[long2 - 1] = `${usedStrings[long2 - 1].padEnd(L2, "$")}`;
       return usedStrings;
     }
     return newArray;
