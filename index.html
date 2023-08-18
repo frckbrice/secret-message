@@ -12,8 +12,13 @@
     <h1>Secret Message App</h1>
     <main class="container">
       <div class="div-for-input">
-        <label for="input-text">Enter the text to cypher here.</label>
-        <input type="text" name="input-text" class="input-text" />
+        <div class="div-input">
+           <!-- <label for="input-text">Enter the text to cypher here.</label><br> -->
+        <input type="text" name="input-text" class="input-text" placeholder="Enter the text to cypher"/></div>
+       
+         <div class="div-action">
+        <button class="action">Fire Action</button>
+      </div>
       </div>
       <!-- <div> -->
       <div class="first-rectangle">
@@ -28,9 +33,7 @@
         <span>Second rectangle from the encoded message: </span>
         <div class="second"></div>
       </div>
-      <div class="div-btn-action">
-        <button class="action">Fire Action</button>
-      </div>
+     
       <!-- </div> -->
     </main>
     <script src="./assets/js/index.js" type="module"></script>

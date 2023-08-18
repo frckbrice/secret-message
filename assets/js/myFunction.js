@@ -18,7 +18,7 @@ const normalizedText = (chaine) => {
   chaine = chaine.split("");
 
   for (let elem of chaine) {
-    if(/\w/.test(elem)){
+    if (/\w/.test(elem)) {
       newArray.push(elem);
     }
   }
@@ -55,7 +55,7 @@ function columsAndRowLength(chaine) {
  * @returns Array of strings
  */
 const splitText = (string, colums) => {
-  if (string.length > 50) {
+  if (string.length >= 50) {
     let newArray = [],
       usedStrings = [];
     // to create new array with chunks
@@ -71,8 +71,10 @@ const splitText = (string, colums) => {
     let L1 = usedStrings[long2 - 1].length;
     // check if the last substring is shorter than one before.
     if (L2 > L1) {
-      // append '$' character to the last substring
-      usedStrings[long2 - 1] = usedStrings[long2 - 1].padEnd(L2, "$");
+      usedStrings[long2 - 1] = `"${usedStrings[long2 - 1]
+        .slice(1, usedStrings[long2 - 1].length - 1)
+        .padEnd(L2, " ")}"`;
+
       return usedStrings;
     }
     return newArray;
@@ -81,7 +83,9 @@ const splitText = (string, colums) => {
 
 //* function to convert split text into chunks strings
 function chunkToString(splitText) {
-  return splitText.join(`&nbsp;&nbsp;`);
+  return `"${splitText
+    .map((chunk) => chunk.slice(1, chunk.length - 1))
+    .join(`&nbsp;&nbsp;`)}"`;
 }
 
 //* function to read each characters on the row left to right. takes array of normalized text and the length of the text
@@ -96,7 +100,7 @@ function secretText(newArray) {
   let temp = [];
   let i = 0,
     j = 1;
-  while (j < newArray[0].length-1) {
+  while (j < newArray[0].length - 1) {
     while (i < newArray.length) {
       temp.push(newArray[i][j]);
       i++;
@@ -119,6 +123,7 @@ function secretText(newArray) {
  */
 
 function rectangle(splitedText) {
+  console.log(typeof splitedText);
   let newArray = [];
   for (let i = 0; i < splitedText.length; i++) {
     newArray.push(splitedText[i] + "<br>");

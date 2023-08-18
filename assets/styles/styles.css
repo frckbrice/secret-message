@@ -7,8 +7,6 @@
 body {
   width: 100%;
   min-height: 100vh;
-
-  /* background: linear-gradient(rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url("../images/bgimagfromphotodeposit.jpg"); */
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +29,8 @@ h1 {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent; */
-   color: #000;
+
+  color: #000;
   font-family: Tahoma, Verdana, Geneva, sans-serif;
   font-size: 40px;
   text-align: center;
@@ -44,12 +43,24 @@ main {
 
 .div-for-input {
   width: 100%;
-  height: 100px;
   margin-top: 3rem;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-input {
+  width: 80%;
+  
+}
+
+.div-action {
+  flex-basis: 18%;
+  display: flex;
 }
 
 label {
-  color: aliceblue;
   font-style: italic;
   margin: 0 5px 30px 5px;
   font-size: 1.25rem;
@@ -60,6 +71,14 @@ label {
   height: 40px;
   border-radius: 15px;
   padding: 0.25rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+.action {
+  width: auto;
+  padding: 8px 20px;
+  border-radius: 15px;
+  font-size: 1.25rem;
 }
 
 .second-rectangle,
@@ -70,44 +89,64 @@ label {
   font-size: 1.25rem;
 }
 
-.div-btn-action {
-  background-color: blueviolet;
-  width: fit-content;
-  border-radius: 5px;
-  margin: 2rem 10rem 0 40%;
-}
-
-.action {
-  width: auto;
-  padding: 8px 20px;
-  border-radius: 5px;
-  font-size: 1.25rem;
-}
-
 span {
   font-style: italic;
   font-size: 1.5rem;
   color: rgb(26, 25, 26);
-    border-radius: 10px;
+  border-radius: 10px;
   font-weight: bold;
   /* background-image: linear-gradient(to right, white, #ffff06);
   -webkit-background-clip: text;  background-clip: text;
   -webkit-text-fill-color: transparent; */
+
   margin-bottom: 1.25rem;
 }
 
-@media screen and (max-width: 768px){
+.alert {
+  color: red;
+  font-size: 1.30rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .div-for-input {
+    display: block;
+    font-size: 1.25rem;
+  }
+
+  .div-input {
+    width: 100%;
+  }
+
+  .div-action {
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .input-text {
+    font-size: 1.25rem;
+  }
+
   header {
     position: absolute;
     bottom: 10px;
     right: 15px;
     margin: 0;
   }
+
+  .input-text {
+    width: 100%;
+  }
 }
 
-@media screen and (max-width: 425px){
+@media screen and (max-width: 425px) {
   .action {
-    width: 30vw;
+    width: 150px;
+    padding-top: 5px;
   }
 
   header {
