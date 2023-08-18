@@ -6,21 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Secret message</title>
     <link rel="stylesheet" href="./assets/styles/styles.css" />
-    <script defer src="./assets/js/secret-message.js"></script>
   </head>
   <body>
+    <header>Made with love by Avom Brice from Ra.</header>
     <h1>Secret Message App</h1>
-      <main class="container">
-        <div class="div-for-input">
-          <label for="input-text">Enter your text</label>
-          <input type="text" name="input-text" class="input-text" />
-        </div>
-        <div class="first-rectangle">first rectangle</div>
-        <div class="chunks">chunks</div>
-        <div class="second-rectangle">second rectangle</div>
-        <div class="div-btn-action">
-          <button class="action">Chow</button>
-        </div>
-      </main>
+    <main class="container">
+      <div class="div-for-input">
+        <div class="div-input">
+           <!-- <label for="input-text">Enter the text to cypher here.</label><br> -->
+        <input type="text" name="input-text" class="input-text" placeholder="Enter the text to cypher"/></div>
+       
+         <div class="div-action">
+        <button class="action">Fire Action</button>
+      </div>
+      </div>
+      <!-- <div> -->
+      <div class="first-rectangle">
+        <span>First rectangle of normalized text : </span>
+        <div class="rectange"></div>
+      </div>
+      <div class="first-chunks">
+        <span>Encoded message in chunks: </span>
+        <div class="chunks"></div>
+      </div>
+      <div class="second-rectangle">
+        <span>Second rectangle from the encoded message: </span>
+        <div class="second"></div>
+      </div>
+     
+      <!-- </div> -->
+    </main>
+    <script src="./assets/js/index.js" type="module"></script>
   </body>
 </html>
